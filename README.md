@@ -1,6 +1,6 @@
 # AutoShowFactsBotNew
 A bot that tweets facts about tv shows
 
-# Contributores
+# Contributors
 * Dave Chuck
 * Justin Rackley
