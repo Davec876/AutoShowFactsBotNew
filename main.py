@@ -1,34 +1,34 @@
 import gspread
 from twitter import *
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 import os
 import json
 import qrng
 import threading
 
-def get_keys(path):
-    with open(path) as f:
-        return json.load(f)
-
-keys = get_keys(".secret/package.json")
+# def get_keys(path):
+#     with open(path) as f:
+#         return json.load(f)
+#
+# keys = get_keys(".secret/package.json")
 
 gc = gspread.service_account("credentials.json")
 
 # ALTERNATE METHOD TO GET API ACCESS FOR TWITTER
-# token = os.environ.get('TOKEN')
-# token_secret = os.environ.get('TOKEN_SECRET')
-# consumer_key = os.environ.get('CONSUMER_KEY')
-# consumer_secret = os.environ.get('CONSUMER_SECRET')
+token = os.environ.get('TOKEN')
+token_secret = os.environ.get('TOKEN_SECRET')
+consumer_key = os.environ.get('CONSUMER_KEY')
+consumer_secret = os.environ.get('CONSUMER_SECRET')
 
 # opening the spreadsheet
 sheet = gc.open_by_key('1p04UtmPblK9JsXSWAbTwhr7ukMw1i8BA3NyAtRKEGc4')
 worksheet = sheet.sheet1
 
-token = keys['TOKEN']
-token_secret = keys['TOKEN_SECRET']
-consumer_key = keys['CONSUMER_KEY']
-consumer_secret = keys['CONSUMER_SECRET']
+# token = keys['TOKEN']
+# token_secret = keys['TOKEN_SECRET']
+# consumer_key = keys['CONSUMER_KEY']
+# consumer_secret = keys['CONSUMER_SECRET']
 
 t = Twitter(
     auth=OAuth(token, token_secret, consumer_key, consumer_secret))
