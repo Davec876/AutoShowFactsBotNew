@@ -22,7 +22,7 @@ consumer_key = os.environ.get('CONSUMER_KEY')
 consumer_secret = os.environ.get('CONSUMER_SECRET')
 
 # opening the spreadsheet
-sheet = gc.open_by_key('1p04UtmPblK9JsXSWAbTwhr7ukMw1i8BA3NyAtRKEGc4')
+sheet = gc.open_by_key('*insert apikey here*')
 worksheet = sheet.sheet1
 
 # token = keys['TOKEN']
